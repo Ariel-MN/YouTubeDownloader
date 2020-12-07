@@ -1,0 +1,18 @@
+# INSTALL PYTHON 3.9.0 (adding it to the path)
+
+# CREATE A VIRTUAL ENVIRONMENT:
+# $ python -m venv env
+# $ env\Scripts\activate
+
+# UPGRADE PIP:
+# (env)$ python -m pip install --upgrade pip
+
+# INSTALL DEPENDENCIES:
+# (env)$ pip install -r /path/to/requirements.txt
+
+# REQUIREMENTS:
+numpy==1.19.3
+moviepy==1.0.3
+pytube==10.0.0
+File-Converter==0.1
+httplib2==0.18.1
