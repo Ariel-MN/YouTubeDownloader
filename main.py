@@ -105,11 +105,13 @@ def main():
 
     # Check if user want help
     if command[0].lower() in ["h", "help"]:
-        help()        
+        help()
+        cmdPause() 
 
     # Show information about the creator
     elif command[0].lower() in ["c", "creator"]:
-        creator(author, email, website)        
+        creator(author, email, website)
+        cmdPause()       
 
     # Check if user want to exit
     elif command[0].lower() in ["q", "quit", "e", "exit"]:

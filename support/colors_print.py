@@ -39,10 +39,7 @@ def creator(author,email,website):
     print(f"""
       {green}Creator : {white}{author}
       {green}E-mail  : {white}{email}
-      {green}Website : {blue}{website}
-""")
-    input(f'{green}Press enter key to continue . . .')
-    Start_Program()
+      {green}Website : {blue}{website}""")
 
 # Help and usage of the program
 def help ():
@@ -68,7 +65,4 @@ f"""{green}
 {green}Advanced Options:
   {yellow}-i, --inspect     {green}Inspect the video and show all the available tag numbers.
   {yellow}-t, --tag         {green}Specify the tag number of the video quality to download,
-                    {green}usage example: {blue}url {yellow}-t 18 {green}or {blue}url {yellow}-t 18 --audio
-""")
-    input(f'{green}Press enter key to continue . . .')
-    Start_Program()
+                    {green}usage example: {blue}url {yellow}-t 18 {green}or {blue}url {yellow}-t 18 --audio""")
