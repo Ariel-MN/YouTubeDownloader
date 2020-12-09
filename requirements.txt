@@ -15,4 +15,4 @@ numpy==1.19.3
 moviepy==1.0.3
 pytube==10.0.0
 File-Converter==0.1
-httplib2==0.18.1
+urllib3==1.26.2

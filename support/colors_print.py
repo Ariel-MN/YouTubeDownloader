@@ -17,12 +17,12 @@ else:
 
 # Clearing screen
 def ClrScrn():
-	system('cls' if osName == 'nt' else 'clear')
+	  system('cls' if osName == 'nt' else 'clear')
 
 # Banner of the program
 def banner(version):
-        ClrScrn()
-        print(f'''
+    ClrScrn()
+    print(f'''
     {white}__   __       {red} _____     _         {blue}______                    _                _ 
     {white}\ \ / /       {red}|_   _|   | |        {blue}|  _  \                  | |              | |
      {white}\ V /___  _   _{red}| |_   _| |__   ___{blue}| | | |_____      ___ __ | | ___  ____  __| |
@@ -31,7 +31,7 @@ def banner(version):
       {white}\_/\___/ \__,_{red}\_/\__,_|_.__/ \___{blue}|___/ \___/ \_/\_/ |_| |_|_|\___\___._|\__._|  {yellow}{version}
     
 
-      {red}Type an {blue}url {red}or {yellow}help {red}for view all the options, {yellow}q {red}for exit.\n
+      {red}Type an {blue}url {red}or {yellow}help {red}for view all the options, {yellow}q {red}for exit.
     ''')
 
 # Creator of the program
@@ -52,15 +52,16 @@ f"""{green}
 
 {green}Basic Options:
   {yellow} h, help          {green}Show this help.
-  {yellow} c, creator       {green}Show creator information.
+  {yellow} c, creator       {green}Show information about the creator.
   {yellow} q, quit          {green}Exit the program.
   {yellow} e, exit          {green}Exit the program.
 
 {green}General Options:
   {yellow}-l, --low         {green}Download videos in the lowest quality.
   {yellow}-b, --best        {green}Download videos in the best quality.
-  {yellow}-a, --audio       {green}Convert to audio after downloading the video in low quality,
-                    {green}usage example: {blue}url {yellow}-a {green}or {blue}url {yellow}-b -a
+  {yellow}-a, --audio       {green}Convert to audio after downloading the video in low quality.
+                    The video will be automatically deleted if a quality option
+                    or tag is not specified, {green}usage example: {blue}url {yellow}-a {green}or {blue}url {yellow}-b -a
 
 {green}Advanced Options:
   {yellow}-i, --inspect     {green}Inspect the video and show all the available tag numbers.
