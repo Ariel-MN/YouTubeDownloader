@@ -104,16 +104,19 @@ def cmdImput():
     except KeyboardInterrupt:
         sysExit()
 
+# Display program banner and version
+banner(version)
+
+# Try to add the program to the 'Path' os environment variable
+try:
+    environment_var(FullAppPath)
+except Exception:
+    print(f"""\n      {white}Consider running with admin privileges the next time to add the program 
+    to the path and be able to run it by typing {green}youtube {white}in the shell.
+    """)
+
 # Program main function ☆ﾟ.*･｡ﾟ
 def main():
-    banner(version)
-
-    try:
-        environment_var(FullAppPath)
-    except Exception:
-        print(f"""\n      {white}Consider running with admin privileges the next time to add the program 
-      to the path and be able to run it by typing {green}youtube {white}in the shell.
-      """)
 
     # The main input of the program
     command = cmdImput()
@@ -121,17 +124,13 @@ def main():
     # Check if user want help
     if command[0].lower() in ["h", "help"]:
         help()
-        command = cmdImput()
-        if command[0].lower() in ["h", "help"]:
-            banner(version)
-            help()
-            cmdPause()
+        return main()
 
     # Show information about the creator
     if command[0].lower() in ["c", "creator"]:
         creator(author, email, website)
-        cmdPause()       
-
+        return main()
+    
     # Check if user want to exit
     elif command[0].lower() in ["q", "quit", "e", "exit"]:
         sysExit()
@@ -158,7 +157,6 @@ def main():
                 streams1, streams2, streams3 = yt_download.inspect_video(url=url)
             except Exception:
                 error("Could not find the video in the given URL")
-            print('')
             if streams1:
                 print(f'\n{green}Streams with video and audio:')
                 for stream in streams1:
@@ -171,7 +169,7 @@ def main():
                 print(f'\n{green}Streams with audio only:')
                 for stream in streams3:
                     print(f'{yellow}{stream}')
-            cmdPause()
+            return main()
 
         # Download the video in the lowest quality
         elif option in ["-l", "--low"]:
@@ -243,7 +241,8 @@ def main():
         
     # Program restarts after completing a task
     sleep(3)
-    main()
+    banner(version)
+    return main()
 
 if __name__ == "__main__":        
     # Run the program
